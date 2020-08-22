@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Button } from 'react-native';
-import { screens } from '../../navigation';
+import { screens } from 'navigation';
 
 function HomeScreen({ navigation }) {
   return (

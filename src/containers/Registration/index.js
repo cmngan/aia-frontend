@@ -1,16 +1,19 @@
 import React from 'react';
 import { screens } from 'navigation';
 import {
-  TextInput, Button, Box
+  TextInput, Button, Box, Text
 } from 'components';
-import { useTextInput, useSubmit } from 'hooks';
+import { useTextInput, useSubmit } from 'hooks/form';
+import { registerApi } from 'integration';
 
-function RegistrationScreen({ navigation }) {
+function RegistrationScreen() {
   const emailInput = useTextInput('', 'email');
   const passwordInput = useTextInput('', 'required');
   const password2Input = useTextInput('', 'required', (value) => passwordInput.value !== value && 'Incorrect confirm password');
-  const onSubmit = useSubmit(
-    () => navigation.navigate(screens.Home.key), [emailInput, passwordInput, password2Input]
+  const [onSubmit, status] = useSubmit(
+    (email, password) => registerApi(email, password),
+    // .then(() => navigation.navigate(screens.Home.key)),
+    [emailInput, passwordInput, password2Input]
   );
   return (
     <Box type="center">
@@ -22,11 +25,13 @@ function RegistrationScreen({ navigation }) {
           title="Register"
           onPress={onSubmit}
         />
+        <Text type="error">{status.error}</Text>
       </Box>
     </Box>
   );
 }
 
 RegistrationScreen.title = 'Sign Up for free';
+RegistrationScreen.signOutOnly = true;
 
 export default RegistrationScreen;

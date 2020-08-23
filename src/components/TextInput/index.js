@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import {
   TextInput as RnTextInput, StyleSheet, View
@@ -6,11 +5,19 @@ import {
 import Text from '../Text';
 
 function TextInput({
-  required, placeholder, touched, setTouched, error, ...props
+  required,
+  placeholder,
+  disabled,
+  setDisabled,
+  touched,
+  setTouched,
+  error,
+  ...props
 }) {
   return (
     <View style={styles.container}>
       <RnTextInput
+        editable={!disabled}
         style={styles.textInput}
         placeholder={`${placeholder}${required ? ' *' : ''}`}
         {...props}

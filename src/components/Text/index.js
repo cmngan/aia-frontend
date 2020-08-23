@@ -4,9 +4,12 @@ import {
 } from 'react-native';
 import color from 'constants/color';
 
-function Text({ type, ...props }) {
+function Text({ type, children, ...props }) {
+  if (!children) return null;
   return (
-    <RnText style={[styles.text, typeStyles[type]]} {...props} />
+    <RnText style={[styles.text, typeStyles[type]]} {...props}>
+      {children}
+    </RnText>
   );
 }
 

@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import {
   StyleSheet, Text as RnText
@@ -24,6 +23,11 @@ const typeStyles = StyleSheet.create({
   },
   primary: {
     color: color.light.primary
+  },
+  error: {
+    color: color.light.primary,
+    paddingHorizontal: 4,
+    paddingTop: 4
   }
 });
 

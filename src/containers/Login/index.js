@@ -8,7 +8,7 @@ function LoginScreen({ navigation }) {
   return (
     <Box type="center">
       <Box type="dialog">
-        <TextInput placeholder="username" />
+        <TextInput placeholder="email" />
         <TextInput placeholder="password" />
         <Button
           title="LOGIN"

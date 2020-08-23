@@ -1,19 +1,33 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import {
-  TextInput as RnTextInput, StyleSheet
+  TextInput as RnTextInput, StyleSheet, View
 } from 'react-native';
+import Text from '../Text';
 
-function TextInput(props) {
-  return <RnTextInput style={styles.textInput} {...props} />;
+function TextInput({
+  required, placeholder, touched, setTouched, error, ...props
+}) {
+  return (
+    <View style={styles.container}>
+      <RnTextInput
+        style={styles.textInput}
+        placeholder={`${placeholder}${required ? ' *' : ''}`}
+        {...props}
+      />
+      {touched && error && <Text type="error">{error}</Text>}
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    marginBottom: 16,
+  },
   textInput: {
     backgroundColor: '#ececec',
     paddingHorizontal: 12,
     paddingVertical: 12,
-    marginBottom: 16,
     borderColor: 'red'
     // minWidth: 300
   }

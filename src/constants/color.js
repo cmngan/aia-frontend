@@ -1,13 +1,17 @@
-const tintColorLight = '#2f95dc';
-const tintColorDark = '#fff';
+const primary = '#d31145';
+// const tintColorLight = '#2f95dc';
+// const tintColorDark = '#fff';
 
+// TODO: Add light and dark mode support
 export default {
   light: {
     text: '#000',
     background: '#fff',
-    tint: tintColorLight,
-    tabIconDefault: '#ccc',
-    tabIconSelected: tintColorLight,
+    primary,
+    primaryReverse: '#fff'
+    // tint: tintColorLight,
+    // tabIconDefault: '#ccc',
+    // tabIconSelected: tintColorLight,
   },
   // dark: {
   //   text: '#fff',

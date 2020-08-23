@@ -8,7 +8,7 @@ function HomeScreen({ navigation }) {
       <Text>Home Screen</Text>
       <Button
         title="Go to Details"
-        onPress={() => navigation.navigate(screens.Registration.key)}
+        onPress={() => navigation.navigate(screens.Login.key)}
       />
     </View>
   );

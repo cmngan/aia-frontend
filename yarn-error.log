@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\yarn\bin\yarn.js add babel-plugin-module-resolver
+  C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\yarn\bin\yarn.js add firebase@7.9.0
 
 PATH: 
   C:\Python27\;C:\Python27\Scripts;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Git\cmd;C:\Strawberry\c\bin;C:\Strawberry\perl\site\bin;C:\Strawberry\perl\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\ProgramData\chocolatey\bin;C:\Program Files\Java\jdk1.8.0_152\bin;C:\Program Files\MATLAB\R2017b\bin;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\cm\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files (x86)\Yarn\bin\;C:\Users\cm\AppData\Local\Microsoft\WindowsApps;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\cm\AppData\Local\.meteor\;C:\Users\cm\AppData\Local\Android\Sdk\platform-tools;C:\Users\cm\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\cm\AppData\Local\Yarn\bin;C:\Users\cm\AppData\Local\now-cli;C:\Program Files\ffmpeg\bin;
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: EPERM: operation not permitted, unlink 'C:\git\aia-frontend\node_modules\babel-eslint\node_modules\.bin'
+  Error: EPERM: operation not permitted, unlink 'C:\git\aia-frontend\node_modules\@babel\compat-data\node_modules\.bin'
 
 npm manifest: 
   {
@@ -44,16 +44,17 @@ npm manifest:
     "devDependencies": {
       "@babel/core": "^7.8.6",
       "babel-eslint": "^10.1.0",
+      "babel-plugin-module-resolver": "^4.0.0",
       "babel-preset-expo": "~8.1.0",
       "eslint": "^7.7.0",
       "eslint-config-airbnb": "^18.2.0",
+      "eslint-import-resolver-babel-module": "^5.1.2",
       "eslint-plugin-import": "^2.22.0",
       "eslint-plugin-jsx-a11y": "^6.3.1",
       "eslint-plugin-react": "^7.20.6"
     },
     "private": true,
-    "lint": "eslint *.js **/*.js",
-    "name": "app"
+    "lint": "eslint *.js **/*.js"
   }
 
 yarn manifest: 
@@ -1730,6 +1731,17 @@ Lockfile:
       reselect "^3.0.1"
       resolve "^1.4.0"
   
+  babel-plugin-module-resolver@^4.0.0:
+    version "4.0.0"
+    resolved "https://registry.yarnpkg.com/babel-plugin-module-resolver/-/babel-plugin-module-resolver-4.0.0.tgz#8f3a3d9d48287dc1d3b0d5595113adabd36a847f"
+    integrity sha512-3pdEq3PXALilSJ6dnC4wMWr0AZixHRM4utpdpBR9g5QG7B7JwWyukQv7a9hVxkbGFl+nQbrHDqqQOIBtTXTP/Q==
+    dependencies:
+      find-babel-config "^1.2.0"
+      glob "^7.1.6"
+      pkg-up "^3.1.0"
+      reselect "^4.0.0"
+      resolve "^1.13.1"
+  
   babel-plugin-react-native-web@^0.11.7:
     version "0.11.7"
     resolved "https://registry.yarnpkg.com/babel-plugin-react-native-web/-/babel-plugin-react-native-web-0.11.7.tgz#15b578c0731bd7d65d334f9c759d95e8e4a602e2"
@@ -2615,6 +2627,14 @@ Lockfile:
       object.assign "^4.1.0"
       object.entries "^1.1.2"
   
+  eslint-import-resolver-babel-module@^5.1.2:
+    version "5.1.2"
+    resolved "https://registry.yarnpkg.com/eslint-import-resolver-babel-module/-/eslint-import-resolver-babel-module-5.1.2.tgz#3d5599d49f641f9c832f001ccf7087a70a3c8c1b"
+    integrity sha512-pzKE6UzXgT1Opp4N2P2yoE7OY29+LX3FNX6bqAjmGV+btR/ZYnE/oQFoGzL2/3RkLYRTBYRFwvrphRy5wEAUwg==
+    dependencies:
+      pkg-up "^2.0.0"
+      resolve "^1.10.0"
+  
   eslint-import-resolver-node@^0.3.3:
     version "0.3.4"
     resolved "https://registry.yarnpkg.com/eslint-import-resolver-node/-/eslint-import-resolver-node-0.3.4.tgz#85ffa81942c25012d8231096ddf679c03042c717"
@@ -3157,7 +3177,7 @@ Lockfile:
       statuses "~1.5.0"
       unpipe "~1.0.0"
   
-  find-babel-config@^1.1.0:
+  find-babel-config@^1.1.0, find-babel-config@^1.2.0:
     version "1.2.0"
     resolved "https://registry.yarnpkg.com/find-babel-config/-/find-babel-config-1.2.0.tgz#a9b7b317eb5b9860cda9d54740a8c8337a2283a2"
     integrity sha512-jB2CHJeqy6a820ssiqwrKMeyC6nNdmrcgkKWJWmpoxpE8RKciYJXCcXRq1h2AzCo5I5BJeN2tkGEO3hLTuePRA==
@@ -3317,7 +3337,7 @@ Lockfile:
     dependencies:
       is-glob "^4.0.1"
   
-  glob@^7.1.2, glob@^7.1.3:
+  glob@^7.1.2, glob@^7.1.3, glob@^7.1.6:
     version "7.1.6"
     resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.6.tgz#141f33b81a7c2492e125594307480c46679278a6"
     integrity sha512-LwaxwyZ72Lk7vZINtNNrywX0ZuLyStrdDtabefZKAY5ZGJhVtgdznluResxNmPitE0SAO+O26sWTHeKSI2wMBA==
@@ -4989,6 +5009,13 @@ Lockfile:
     dependencies:
       find-up "^2.1.0"
   
+  pkg-up@^3.1.0:
+    version "3.1.0"
+    resolved "https://registry.yarnpkg.com/pkg-up/-/pkg-up-3.1.0.tgz#100ec235cc150e4fd42519412596a28512a0def5"
+    integrity sha512-nDywThFk1i4BQK4twPQ6TA4RT8bDY96yeuCVBWL3ePARCiEKDRSrNGbFIgUJpLp+XeIR65v8ra7WuJOFUBtkMA==
+    dependencies:
+      find-up "^3.0.0"
+  
   plist@^3.0.1:
     version "3.0.1"
     resolved "https://registry.yarnpkg.com/plist/-/plist-3.0.1.tgz#a9b931d17c304e8912ef0ba3bdd6182baf2e1f8c"
@@ -5392,6 +5419,11 @@ Lockfile:
     version "3.0.1"
     resolved "https://registry.yarnpkg.com/reselect/-/reselect-3.0.1.tgz#efdaa98ea7451324d092b2b2163a6a1d7a9a2147"
     integrity sha1-79qpjqdFEyTQkrKyFjpqHXqaIUc=
+  
+  reselect@^4.0.0:
+    version "4.0.0"
+    resolved "https://registry.yarnpkg.com/reselect/-/reselect-4.0.0.tgz#f2529830e5d3d0e021408b246a206ef4ea4437f7"
+    integrity sha512-qUgANli03jjAyGlnbYVAV5vvnOmJnODyABz51RdBN7M4WaVu8mecZWgyQNkG8Yqe3KRGRt0l4K4B3XVEULC4CA==
   
   resolve-from@^3.0.0:
     version "3.0.0"

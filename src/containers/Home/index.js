@@ -14,4 +14,7 @@ function HomeScreen({ navigation }) {
   );
 }
 
+HomeScreen.title = 'haha';
+HomeScreen.route = 'home';
+
 export default HomeScreen;

@@ -8,9 +8,28 @@ import * as containers from '../containers';
 
 const Stack = createStackNavigator();
 
+export const screens = Object.entries(containers)
+  .reduce((p, [key, component]) => ({
+    ...p,
+    [key]: {
+      key,
+      component,
+      displayName: component.title || component.displayName || component.name,
+      route: component.route || key.toLowerCase()
+    }
+  }), {});
+
 const prefix = Linking.makeUrl('/');
 const linking = {
   prefixes: [prefix],
+  config: {
+    screens: {
+      ...Object.values(screens).reduce((p, c) => ({
+        ...p,
+        [c.key]: c.route
+      }), {})
+    }
+  }
 };
 
 export default function Navigation() {
@@ -20,16 +39,6 @@ export default function Navigation() {
     </NavigationContainer>
   );
 }
-
-export const screens = Object.entries(containers)
-  .reduce((p, [key, component]) => ({
-    ...p,
-    [key]: {
-      key,
-      component,
-      displayName: component.displayName || component.name
-    }
-  }), {});
 
 function RootNavigator() {
   return (

@@ -1,9 +1,8 @@
 import React from 'react';
 import { View, Text, Button } from 'react-native';
-import { screens } from 'navigation';
 import { logoutApi } from 'integration';
 
-function HomeScreen({ navigation }) {
+function HomeScreen() {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Home Screen</Text>
@@ -18,5 +17,6 @@ function HomeScreen({ navigation }) {
 
 HomeScreen.title = 'haha';
 HomeScreen.signInOnly = true;
+HomeScreen.route = '/';
 
 export default HomeScreen;

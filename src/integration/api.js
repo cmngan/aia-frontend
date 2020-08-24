@@ -14,6 +14,5 @@ export function logoutApi() {
 }
 
 export function userListener(onChangeUser) {
-  onChangeUser(auth().currentUser);
   return auth().onAuthStateChanged(onChangeUser);
 }

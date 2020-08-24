@@ -36,5 +36,6 @@ function LoginScreen({ navigation }) {
 
 LoginScreen.title = 'Login';
 LoginScreen.signOutOnly = true;
+LoginScreen.route = '/';
 
 export default LoginScreen;

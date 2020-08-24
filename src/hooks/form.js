@@ -13,7 +13,7 @@ const inputTypeList = {
     textContentType: 'emailAddress'
   },
   password: {
-    validator: (value) => value.length < 8 && 'At least 8 chars is required.',
+    validator: (value) => value.length < 6 && 'At least 6 chars is required.',
     required: true,
     secureTextEntry: true,
     autoCompleteType: 'password',

@@ -18,7 +18,7 @@ function RegistrationScreen() {
     <Box type="center">
       <Box type="dialog">
         <TextInput placeholder="Email" {...emailInput} />
-        <TextInput placeholder="Password" {...passwordInput} />
+        <TextInput placeholder="Password" textContentType="newPassword" {...passwordInput} />
         <TextInput placeholder="Confirm password" {...password2Input} />
         <Button
           title="Register"

@@ -8,7 +8,15 @@ const inputTypeList = {
   },
   email: {
     validator: (value) => !emailRegex.test(value.toLowerCase()) && 'Incorrect email.',
-    required: true
+    required: true,
+    autoCompleteType: 'email',
+    textContentType: 'emailAddress'
+  },
+  password: {
+    validator: (value) => value.length < 8 && 'At least 8 chars is required.',
+    required: true,
+    secureTextEntry: true,
+    autoCompleteType: 'password',
   }
 };
 

@@ -8,7 +8,7 @@ import { loginApi } from 'integration';
 
 function LoginScreen({ navigation }) {
   const emailInput = useTextInput('', 'email');
-  const passwordInput = useTextInput('', 'required');
+  const passwordInput = useTextInput('', 'password');
   const [onSubmit, status] = useSubmit(
     (email, password) => loginApi(email, password),
     [emailInput, passwordInput]
@@ -17,7 +17,7 @@ function LoginScreen({ navigation }) {
     <Box type="center">
       <Box type="dialog">
         <TextInput placeholder="email" {...emailInput} />
-        <TextInput placeholder="password" {...passwordInput} />
+        <TextInput placeholder="password" textContentType="password" {...passwordInput} />
         <Button
           title="LOGIN"
           onPress={onSubmit}

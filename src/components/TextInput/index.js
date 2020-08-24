@@ -1,7 +1,8 @@
 import React from 'react';
 import {
-  TextInput as RnTextInput, StyleSheet, View
+  TextInput as RnTextInput, StyleSheet
 } from 'react-native';
+import color from 'constants/color';
 import Text from '../Text';
 
 function TextInput({
@@ -15,28 +16,28 @@ function TextInput({
   ...props
 }) {
   return (
-    <View style={styles.container}>
+    <>
       <RnTextInput
         editable={!disabled}
-        style={styles.textInput}
+        style={[styles.textInput, disabled && styles.disabled]}
         placeholder={`${placeholder}${required ? ' *' : ''}`}
         {...props}
       />
       {touched && error && <Text type="error">{error}</Text>}
-    </View>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    marginBottom: 16,
-  },
   textInput: {
+    marginBottom: 16,
     backgroundColor: '#ececec',
     paddingHorizontal: 12,
     paddingVertical: 12,
-    borderColor: 'red'
-    // minWidth: 300
+  },
+  disabled: {
+    backgroundColor: color.light.disabled,
+    cursor: 'NOT-ALLOWED'
   }
 });
 

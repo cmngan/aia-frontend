@@ -16,7 +16,6 @@ function Text({ type, children, ...props }) {
 const styles = StyleSheet.create({
   text: {
     color: color.light.text,
-    // textAlign: 'center'
   },
 });
 
@@ -29,6 +28,8 @@ const typeStyles = StyleSheet.create({
   },
   error: {
     color: color.light.primary,
+    marginTop: -16,
+    marginBottom: 16,
     paddingHorizontal: 4,
     paddingTop: 4
   }

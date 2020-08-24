@@ -8,7 +8,8 @@ export default {
     text: '#000',
     background: '#fff',
     primary,
-    primaryReverse: '#fff'
+    primaryReverse: '#fff',
+    disabled: '#ccc'
     // tint: tintColorLight,
     // tabIconDefault: '#ccc',
     // tabIconSelected: tintColorLight,

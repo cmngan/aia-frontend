@@ -21,6 +21,7 @@ function LoginScreen({ navigation }) {
         <Button
           title="LOGIN"
           onPress={onSubmit}
+          isLoading={status.isLoading}
         />
         <Text type="error">{status.error}</Text>
 

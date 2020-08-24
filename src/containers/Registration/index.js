@@ -1,5 +1,4 @@
 import React from 'react';
-import { screens } from 'navigation';
 import {
   TextInput, Button, Box, Text
 } from 'components';
@@ -24,6 +23,7 @@ function RegistrationScreen() {
         <Button
           title="Register"
           onPress={onSubmit}
+          isLoading={status.isLoading}
         />
         <Text type="error">{status.error}</Text>
       </Box>

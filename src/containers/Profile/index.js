@@ -2,10 +2,10 @@ import React from 'react';
 import { View, Text, Button } from 'react-native';
 import { logoutApi } from 'integration';
 
-function HomeScreen() {
+function Profile() {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
+      <Text>Profile</Text>
       <Button title="logout" onPress={logoutApi} />
       {/* <Button
         title="Go to Details"
@@ -15,8 +15,6 @@ function HomeScreen() {
   );
 }
 
-HomeScreen.title = 'Dashboard';
-HomeScreen.signInOnly = true;
-HomeScreen.route = '/';
+Profile.signInOnly = true;
 
-export default HomeScreen;
+export default Profile;

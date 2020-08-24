@@ -11,7 +11,6 @@ function LoginScreen({ navigation }) {
   const passwordInput = useTextInput('', 'required');
   const [onSubmit, status] = useSubmit(
     (email, password) => loginApi(email, password),
-    // .then(() => navigation.navigate(screens.Home.key)),
     [emailInput, passwordInput]
   );
   return (

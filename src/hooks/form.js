@@ -51,6 +51,7 @@ export function useSubmit(onSubmit, fields) {
         fields.forEach((f) => f.setDisabled(false));
       }
     }
+    return null;
   };
   return [onSubmitWithValidation, status];
 }

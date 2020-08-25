@@ -8,6 +8,12 @@ Component.title = 'I am details title on the top';
 Component.route = 'details:/sort';
 ```
 
+## File structure
+We use a flat file structure. `compounds` is a new concept added in this project to see if it helps on organizing ui reusable element with data. 
+- components: all reusable ui elements. From simple to complex components. Potentially change to use atomic design
+- compounds: compose with component(s) and data/functions. Reusable and independent for different pages. 
+- containers: all screens. 
+
 ## Requirement
 
 Technical Test   

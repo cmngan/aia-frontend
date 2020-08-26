@@ -3,11 +3,22 @@ import {
   StyleSheet, View
 } from 'react-native';
 import color from 'constants/color';
-import layout from 'constants/layout';
+import { useLayout } from 'hooks';
 
-function Box({ type, ...props }) {
+function Box({
+  type, wrap, row, ...props
+}) {
+  const { width } = useLayout();
   return (
-    <View style={[typeStyles[type]]} {...props} />
+    <View
+      style={[
+        typeStyles[type],
+        row && { flexDirection: 'row' },
+        wrap && { flexWrap: 'wrap' },
+        type === 'dialog' && { maxWidth: width }
+      ]}
+      {...props}
+    />
   );
 }
 
@@ -22,12 +33,16 @@ const typeStyles = StyleSheet.create({
     padding: 36,
     paddingBottom: 20,
     width: 400,
-    maxWidth: layout.window.width,
+    // maxWidth: layout.window.width,
   },
   row: {
     flexDirection: 'row',
     justifyContent: 'center',
     marginBottom: 16
+  },
+  page: {
+    flex: 1,
+    padding: 16
   }
 });
 

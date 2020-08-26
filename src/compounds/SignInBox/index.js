@@ -5,8 +5,10 @@ import {
 } from 'components';
 import { useTextInput, useSubmit } from 'hooks/form';
 import { loginApi } from 'integration';
+import { useNavigation } from '@react-navigation/native';
 
-function SignInBox({ navigation }) {
+function SignInBox() {
+  const navigation = useNavigation();
   const emailInput = useTextInput('', 'email');
   const passwordInput = useTextInput('', 'password');
   const [onSubmit, status] = useSubmit(

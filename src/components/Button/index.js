@@ -3,14 +3,16 @@ import {
   StyleSheet, TouchableOpacity, Text
 } from 'react-native';
 import color from 'constants/color';
+import { useLayout } from 'hooks';
 
 function Button({
-  title, onPress, isLoading, disabled
+  title, onPress, isLoading, disabled, type
 }) {
+  const { isDesktop } = useLayout();
   const isDisabled = isLoading || disabled;
   return (
     <TouchableOpacity
-      style={[styles.button, isDisabled && styles.disabled]}
+      style={[styles.button, styles[type], isDesktop && styles[`${type}_desktop`], isDisabled && styles.disabled]}
       onPress={onPress}
       disabled={isDisabled}
     >
@@ -25,6 +27,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     paddingVertical: 12,
     marginBottom: 16,
+    // maxWidth: layout.isDesktop ? 200 : 'none'
     // minWidth: 300
   },
   disabled: {
@@ -35,6 +38,12 @@ const styles = StyleSheet.create({
     color: color.light.primaryReverse,
     // fontWeight: 'bold',
     textAlign: 'center'
+  },
+  page: {
+    margin: 16,
+  },
+  page_desktop: {
+    width: 300
   }
 });
 

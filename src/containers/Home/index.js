@@ -1,17 +1,22 @@
 import React from 'react';
-import { View, Text, Button } from 'react-native';
 import { logoutApi } from 'integration';
+import { Box, Button } from 'components';
+import { AccountActivatedNotice, ProfileBlock } from 'compounds';
 
 function HomeScreen() {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-      <Button title="logout" onPress={logoutApi} />
-      {/* <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate(screens.Login.key)}
-      /> */}
-    </View>
+    <>
+      <AccountActivatedNotice />
+      <Box type="page">
+        <Box wrap row>
+          <ProfileBlock />
+          <ProfileBlock />
+          <ProfileBlock />
+          <ProfileBlock />
+        </Box>
+      </Box>
+      <Button title="logout" type="page" onPress={logoutApi} />
+    </>
   );
 }
 

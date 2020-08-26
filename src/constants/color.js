@@ -9,7 +9,8 @@ export default {
     background: '#fff',
     primary,
     primaryReverse: '#fff',
-    disabled: '#ccc'
+    disabled: '#ccc',
+    warning: '#ffc107'
     // tint: tintColorLight,
     // tabIconDefault: '#ccc',
     // tabIconSelected: tintColorLight,

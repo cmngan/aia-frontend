@@ -9,6 +9,11 @@ export function UserProvider({ userListener, ...props }) {
   useEffect(() => {
     userListener(setUser);
   }, [userListener, setUser]);
+  console.log(user);
+  //   displayName: null
+  // email: "abc@test.com"
+  // emailVerified: false
+  // photoURL
   return <UserContext.Provider value={user} {...props} />;
 }
 

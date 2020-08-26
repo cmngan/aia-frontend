@@ -16,3 +16,39 @@ export function logoutApi() {
 export function userListener(onChangeUser) {
   return auth().onAuthStateChanged(onChangeUser);
 }
+
+export function updateUser({ displayName, photoURL }) {
+  const user = auth().currentUser;
+  return user.updateProfile({
+    displayName,
+    photoURL
+  });
+}
+
+export function removeUser() {
+  const user = auth().currentUser;
+  return user.delete();
+}
+
+export function updateEmail(email) {
+  const user = auth().currentUser;
+  return user.updateEmail(email);
+}
+
+export function updatePassword(newPassword) {
+  const user = auth().currentUser;
+  return user.updatePassword(newPassword);
+}
+
+export function reAuth() {
+  // const user = auth().currentUser;
+  // var credential;
+
+  // // Prompt the user to re-provide their sign-in credentials
+
+  // user.reauthenticateWithCredential(credential).then(function() {
+  //   // User re-authenticated.
+  // }).catch(function(error) {
+  //   // An error happened.
+  // });
+}

@@ -9,6 +9,7 @@ function ProfileBlock() {
     <IconBlock
       iconName="user"
       label="Profile"
+      backgroundColor="#1C2541"
       onPress={() => navigation.navigate(screens.Profile.key)}
     />
   );

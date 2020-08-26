@@ -1,6 +1,6 @@
 import React from 'react';
 import { logoutApi } from 'integration';
-import { Box, Button } from 'components';
+import { Box, Button, IconBlock } from 'components';
 import { AccountActivatedNotice, ProfileBlock } from 'compounds';
 
 function HomeScreen() {
@@ -10,9 +10,10 @@ function HomeScreen() {
       <Box type="page">
         <Box wrap row>
           <ProfileBlock />
-          <ProfileBlock />
-          <ProfileBlock />
-          <ProfileBlock />
+          <IconBlock iconName="star" label="Favorite" backgroundColor="#82204A" />
+          <IconBlock iconName="list-alt" label="Order" backgroundColor="#558C8C" />
+          <IconBlock iconName="phone" label="Contact" backgroundColor="#231123" />
+          <IconBlock iconName="gear" label="Settings" backgroundColor="#323a31" />
         </Box>
       </Box>
       <Button title="logout" type="page" onPress={logoutApi} />

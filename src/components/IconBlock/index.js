@@ -1,12 +1,12 @@
 import React from 'react';
 import {
-  StyleSheet, View, Text, TouchableOpacity
+  StyleSheet, Text, TouchableOpacity
 } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { useLayout } from 'hooks';
 
-function Box({
-  iconName = 'user', label = 'Profile', backgroundColor = '#323a31', onPress
+function IconBlock({
+  iconName, label, backgroundColor = '#323a31', onPress
 }) {
   const { isDesktop } = useLayout();
   return (
@@ -41,4 +41,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Box;
+export default IconBlock;

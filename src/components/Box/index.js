@@ -6,9 +6,9 @@ import color from 'constants/color';
 import { useLayout } from 'hooks';
 
 function Box({
-  type, wrap, row, top, ...props
+  type, wrap, row, top, backgroundColor, style, ...props
 }) {
-  const { width } = useLayout();
+  const { width, height } = useLayout();
   const Component = type === 'page' ? ScrollView : View;
   return (
     <Component
@@ -17,7 +17,10 @@ function Box({
         row && { flexDirection: 'row' },
         top && { alignItems: 'flex-start' },
         wrap && { flexWrap: 'wrap' },
-        type === 'dialog' && { maxWidth: width * 0.9 }
+        backgroundColor && { backgroundColor },
+        type === 'dialog' && { maxWidth: width * 0.9 },
+        type === 'main' && { minHeight: height * 0.6 },
+        style
       ]}
       {...props}
     />
@@ -43,9 +46,12 @@ const typeStyles = StyleSheet.create({
     marginBottom: 16
   },
   page: {
-    flex: 1,
     paddingVertical: 16,
-    marginBottom: 16
+    marginBottom: 16,
+  },
+  main: {
+    flex: 1,
+    paddingHorizontal: 16,
   }
 });
 

@@ -32,6 +32,16 @@ const typeStyles = StyleSheet.create({
     marginBottom: 16,
     paddingHorizontal: 4,
     paddingTop: 4
+  },
+  h1: {
+    marginBottom: 16,
+    fontSize: 16
+  },
+  h2: {
+    marginBottom: 20,
+    paddingTop: 12,
+    fontSize: 16,
+    borderTopWidth: 1,
   }
 });
 

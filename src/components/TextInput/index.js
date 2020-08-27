@@ -13,6 +13,7 @@ function TextInput({
   touched,
   setTouched,
   error,
+  reset,
   ...props
 }) {
   return (

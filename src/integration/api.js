@@ -1,5 +1,9 @@
 import { auth } from 'firebase';
 
+const errorCode = {
+  'auth/requires-recent-login': 400
+};
+
 export function registerApi(email, password) {
   return auth()
     .createUserWithEmailAndPassword(email, password);
@@ -35,8 +39,10 @@ export function updateEmail(email) {
   return user.updateEmail(email);
 }
 
-export function updatePassword(newPassword) {
+export async function updatePassword(oldPassword, newPassword) {
   const user = auth().currentUser;
+  await loginApi(user.email, oldPassword);
+
   return user.updatePassword(newPassword);
 }
 

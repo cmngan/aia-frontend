@@ -17,6 +17,13 @@ const inputTypeList = {
     required: true,
     secureTextEntry: true,
     autoCompleteType: 'password',
+  },
+  newPassword: {
+    validator: (value) => value.length < 6 && 'At least 6 chars is required.',
+    required: true,
+    secureTextEntry: true,
+    autoCompleteType: 'password',
+    autoComplete: 'new-password'
   }
 };
 
@@ -31,8 +38,13 @@ export function useTextInput(initialValue = '', type, validator) {
     return typeError || customError || null;
   }, [typeValidator, validator]);
   const error = validatorFn(value);
+  const reset = () => {
+    onChangeText(initialValue);
+    setTouched(false);
+    setDisabled(false);
+  };
   return {
-    value, onChangeText, error, touched, setTouched, disabled, setDisabled, ...props
+    value, onChangeText, error, touched, setTouched, disabled, setDisabled, reset, ...props
   };
 }
 

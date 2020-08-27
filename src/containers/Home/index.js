@@ -15,7 +15,7 @@ function HomeScreen() {
           <IconBlock iconName="phone" label="Contact" backgroundColor="#231123" />
           <IconBlock iconName="gear" label="Settings" backgroundColor="#323a31" />
         </Box>
-        <Button title="Logout" type="page" onPress={logoutApi} />
+        <Button title="Logout" type="secondary" layout="page" onPress={logoutApi} hasConfirm />
       </Box>
     </>
   );

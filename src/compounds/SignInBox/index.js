@@ -7,7 +7,7 @@ import { useTextInput, useSubmit } from 'hooks/form';
 import { loginApi } from 'integration';
 import { useNavigation } from '@react-navigation/native';
 
-function SignInBox() {
+function SignInBox({ title }) {
   const navigation = useNavigation();
   const emailInput = useTextInput('', 'email');
   const passwordInput = useTextInput('', 'password');
@@ -17,6 +17,7 @@ function SignInBox() {
   );
   return (
     <Box type="dialog">
+      <Text type="h1">{title}</Text>
       <TextInput placeholder="email" {...emailInput} />
       <TextInput placeholder="password" textContentType="password" {...passwordInput} />
       <Button
@@ -25,7 +26,6 @@ function SignInBox() {
         isLoading={status.isLoading}
       />
       <Text type="error">{status.error}</Text>
-
       <Box type="row">
         <Text type="hint">Not registered? </Text>
         <Text type="primary" onPress={() => navigation.navigate(screens.Registration.key)}>Create an account</Text>

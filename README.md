@@ -14,6 +14,19 @@ We use a flat file structure. `compounds` is a new concept added in this project
 - compounds: compose with component(s) and data/functions. Reusable and independent for different pages. 
 - containers: all screens. 
 
+## Release
+### For web
+It is auto publish to the link below after master updated.  
+aia-fronted.netlify.app
+
+### For iOS and android
+Run 
+```
+expo publish
+```
+Release path:  
+https://expo.io/@ngancm/aia-frontend
+
 ## Requirement
 
 Technical Test   

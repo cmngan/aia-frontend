@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  StyleSheet, TouchableOpacity, Text
+  StyleSheet, TouchableOpacity, Text, Platform
 } from 'react-native';
 import color from 'constants/color';
 import { useLayout } from 'hooks';
@@ -32,7 +32,9 @@ const styles = StyleSheet.create({
   },
   disabled: {
     backgroundColor: color.light.disabled,
-    cursor: 'NOT-ALLOWED'
+    ...Platform.OS === 'web' && {
+      cursor: 'NOT-ALLOWED'
+    }
   },
   text: {
     color: color.light.primaryReverse,

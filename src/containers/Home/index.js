@@ -8,15 +8,15 @@ function HomeScreen() {
     <>
       <AccountActivatedNotice />
       <Box type="page">
-        <Box wrap row>
+        <Box wrap row top>
           <ProfileBlock />
           <IconBlock iconName="star" label="Favorite" backgroundColor="#82204A" />
           <IconBlock iconName="list-alt" label="Order" backgroundColor="#558C8C" />
           <IconBlock iconName="phone" label="Contact" backgroundColor="#231123" />
           <IconBlock iconName="gear" label="Settings" backgroundColor="#323a31" />
         </Box>
+        <Button title="Logout" type="page" onPress={logoutApi} />
       </Box>
-      <Button title="logout" type="page" onPress={logoutApi} />
     </>
   );
 }

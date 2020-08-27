@@ -10,7 +10,7 @@ function LoginScreen() {
   );
 }
 
-LoginScreen.title = 'Login';
+LoginScreen.title = 'Welcome to AIA';
 LoginScreen.signOutOnly = true;
 LoginScreen.route = '/';
 

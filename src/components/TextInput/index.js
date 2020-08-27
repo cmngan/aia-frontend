@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  TextInput as RnTextInput, StyleSheet
+  TextInput as RnTextInput, StyleSheet, Platform
 } from 'react-native';
 import color from 'constants/color';
 import Text from '../Text';
@@ -37,7 +37,9 @@ const styles = StyleSheet.create({
   },
   disabled: {
     backgroundColor: color.light.disabled,
-    cursor: 'NOT-ALLOWED'
+    ...Platform.OS === 'web' && {
+      cursor: 'NOT-ALLOWED'
+    }
   }
 });
 

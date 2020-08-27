@@ -1,21 +1,23 @@
 import React from 'react';
 import {
-  StyleSheet, View
+  StyleSheet, View, ScrollView
 } from 'react-native';
 import color from 'constants/color';
 import { useLayout } from 'hooks';
 
 function Box({
-  type, wrap, row, ...props
+  type, wrap, row, top, ...props
 }) {
   const { width } = useLayout();
+  const Component = type === 'page' ? ScrollView : View;
   return (
-    <View
+    <Component
       style={[
         typeStyles[type],
         row && { flexDirection: 'row' },
+        top && { alignItems: 'flex-start' },
         wrap && { flexWrap: 'wrap' },
-        type === 'dialog' && { maxWidth: width }
+        type === 'dialog' && { maxWidth: width * 0.9 }
       ]}
       {...props}
     />
@@ -42,7 +44,8 @@ const typeStyles = StyleSheet.create({
   },
   page: {
     flex: 1,
-    padding: 16
+    paddingVertical: 16,
+    marginBottom: 16
   }
 });
 

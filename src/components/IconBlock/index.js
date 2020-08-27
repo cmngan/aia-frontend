@@ -24,8 +24,9 @@ const styles = StyleSheet.create({
   main: {
     padding: 30,
     marginBottom: 16,
-    minWidth: 'fit-content',
+    minWidth: 300,
     marginHorizontal: 16,
+    overflow: 'hidden',
     alignItems: 'center',
     justifyContent: 'center',
     flex: 1
